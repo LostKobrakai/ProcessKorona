@@ -124,7 +124,7 @@ $config->wireInputOrder = 'get post';
  *
  */
 $config->imageSizerOptions = array(
-	'upscaling' => true,
+	'upscaling' => false,
 	'cropping' => true, 
 	'quality' => 100,
 	);
@@ -235,3 +235,4 @@ $config->userAuthSalt = 'd0759644534114e0819189be7ac6388e';
 $config->chmodDir = '0755'; // permission for directories created by ProcessWire
 $config->chmodFile = '0644'; // permission for files created by ProcessWire 
 
+$config->uploadTmpDir = "/Users/Benni/Projekte/A-03-2013_Korona/site/assets/cache";

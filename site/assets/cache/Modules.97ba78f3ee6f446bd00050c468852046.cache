@@ -1,1 +1,8 @@
+FieldtypeCropImage/FieldtypeCropImage.module
+FieldtypeCropImage/InputfieldCropImage/InputfieldCropImage.module
+FieldtypeCropImage/ProcessCropImage/ProcessCropImage.module
 Helloworld.module
+InputfieldCKEditor/InputfieldCKEditor.module
+MarkupHTMLPurifier/MarkupHTMLPurifier.module
+ModulesManager/ModulesManager.module
+ProcessPageDelete/ProcessPageDelete.module

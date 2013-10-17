@@ -75,7 +75,7 @@ DirectoryIndex index.php index.html index.htm
   # And if your site directory starts with a "~" you will most likely have to use this.
   # -----------------------------------------------------------------------------------------------
 
-  # RewriteBase /
+   RewriteBase /
   # RewriteBase /pw/
   # RewriteBase /~user/
 
