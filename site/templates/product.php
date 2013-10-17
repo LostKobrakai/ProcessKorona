@@ -1,6 +1,5 @@
 <?php
 	include("_header.inc");
-	$homepage = $pages->get("id=1");
 ?>
 	<div class="content grid">
 		<div class="produkt">

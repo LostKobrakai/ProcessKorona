@@ -1,5 +1,6 @@
 <?php
- $settings = $pages->get("title=Settings, template=settings");
+	$settings = $pages->get("title=Settings, template=settings");
+	$homepage = $pages->get("id=1");
 ?><!doctype html>
 <!--[if lt IE 9]><html  lang="de" class="ie"><![endif]-->
 <!--[if gte IE 9]><!--><html lang="de"><!--<![endif]-->
@@ -21,11 +22,12 @@
 <body>
 	<header>
 		<div class="logo">
-			<a href="" title="Startseite"><img src="<?php echo $config->urls->templates?>images/logo.png" alt="Logo von Korona"></a>
+			<a href="<?php echo ($page == $homepage) ? "#" : $homepage->url; ?>" title="<?php echo $homepage->title; ?>"><img src="<?php echo $config->urls->templates?>images/logo.png" alt=""></a>
 		</div><nav class="mainnav">
 			<ul class="nav">
 				<?php foreach($settings->settings_mainmenu as $menu) : 
-					if($menu == $page || $menu === $page->rootParent) echo '<li><a class="active" href="#">'.$menu->title.'</a>';
+					if($menu == $page) echo '<li><a class="active" href="#">'.$menu->title.'</a>';
+					elseif($menu === $page->rootParent) echo '<li><a class="active" href="'.$menu->url.'">'.$menu->title.'</a>';
 					else echo '<li><a href="'.$menu->url.'">'.$menu->title.'</a>';
 				endforeach; ?>
 			</ul>
