@@ -1,5 +1,6 @@
 <?php
 	include("_header.inc");
+	$homepage = $pages->get("id=1");
 ?>
 	<div class="content grid">
 		<div class="produkt">
@@ -96,9 +97,9 @@
 							<td><?php echo $dl->title; ?>:</td>
 							<td>
 								<?php if($dl->product_download_save == 0) : ?>
-									<a class="noarr" href="#">PDF</a>
+									<a class="noarr" href="<?php echo $dl->file->url; ?>"><?php echo strtoupper(substr(strstr($dl->file->url, "."), 1)); ?></a>
 								<?php else : ?>
-									<a class="d-refer" href="downloads.php#kor01data">EXL</a>
+									<a class="d-refer" href="<?php echo $pages->get("/") ?>#<?php echo $dl->id; ?>"><?php echo strtoupper(substr(strstr($dl->file->url, "."), 1)); ?></a>
 								<?php endif;?>
 							</td>
 						</tr>
@@ -149,11 +150,13 @@
 					<?php foreach($page->product_related_pages as $rel) : ?>
 					<div class="block grid__item one-whole bp-small-2--one-half bp-large--one-third systemprodukt">
 						<h3 class="headline"><a href="<?php echo $rel->url; ?>"><?php echo $rel->title; ?></a></h3>
-						<figure>
-							<?php if($rel->product_images && $rel->product_images->eq(0)) : ?>
-							<a class="noarr" href="<?php echo $rel->url; ?>"><img class="notrans" src="<?php echo $rel->product_images->eq(0)->getThumb("produkt-klein"); ?>" alt="<?php echo $rel->product_images->eq(0)->description; ?>"></a>
+						<figure><?php 
+							if($rel->product_images && $rel->product_images->eq(0)) : ?>
+							<a class="noarr" href="<?php echo $rel->url; ?>"><img class="notrans" src="<?php echo $rel->product_images->eq(0)->getThumb("produkt-klein"); ?>" alt="<?php echo $rel->product_images->eq(0)->description; ?>"></a> <?php 
+						endif; 
+						if($rel->product_description_list != "") : ?>
+							<figcaption><?php echo $rel->product_description_list; ?></figcaption>
 						<?php endif; ?>
-						<figcaption>LED Profil, Stichpunkt, Produktbeschreibung, Stecker, Strombedingungen</figcaption>
 						</figure>
 					</div>
 					<?php endforeach; ?>

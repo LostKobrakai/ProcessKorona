@@ -2,12 +2,11 @@
 		<div class="grid__item one-whole line"><hr></div><!--
 		 --><nav class="footernav">
 			<ul class="nav">
-				<li><a href="index.php">Startseite</a></li>
-				<li><a href="#">Presse</a></li>
-				<li><a href="downloads.php">Downloads</a></li>
-				<li><a href="kontakt.php">Kontakt</a></li>
-				<li><a href="#">AGB</a></li>
-				<li><a href="#">Impressum</a></li>
+				<li><a href="<?php echo $homepage->url; ?>"><?php echo $homepage->title; ?></a></li>
+				<?php foreach($settings->settings_footermenu as $menu) : 
+					if($menu == $page || $menu === $page->rootParent) echo '<li><a class="active" href="#">'.$menu->title.'</a>';
+					else echo '<li><a href="'.$menu->url.'">'.$menu->title.'</a>';
+				endforeach; ?>
 			</ul>
 		</nav><!--
 		 --><div class="search">
