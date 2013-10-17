@@ -6,3 +6,4 @@ InputfieldCKEditor/InputfieldCKEditor.module
 MarkupHTMLPurifier/MarkupHTMLPurifier.module
 ModulesManager/ModulesManager.module
 ProcessPageDelete/ProcessPageDelete.module
+ProcessSelectorTest/ProcessSelectorTest.module
